@@ -11,18 +11,31 @@
 		min-height: 100px;
 	}
 	a {margin-right: 10px;}
+    .url{
+        color: #0068df;
+        border: 1px solid #d5d7db;
+        padding: 6px 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
 	</style>
 </head>
 <body>
-	<h1>更有想象力的工具</h1>
+	<h2>更有想象力的工具(v1.0)</h2>
 	<div>
-		<a href="#" id="open-chrome-utols">打开chrome插件后台</a>
-		<a href="#" id="check—today-status">查询是否签到</a>
-		<a href="#" id="check">签到</a>
-		<a href="#" id="open-baidu">打开百度</a>
-		<a href="#" id="open-juejin">掘金</a>
+		<span class='url' id="check—today-status">查询是否签到</span>
+		<span class='url' id="check">签到</span>
+        <span class='url' id='chou'>免费抽奖</span>
 	</div>
-	<h2 class="res"></h2>
+    <div>
+        <h3>快捷链接</h3>
+        <span class='url' id="open-baidu">百度</span>
+        <span class='url' id="open-juejin">掘金</span>
+        <span class='url' id="open-sifou">思否</span>
+        <span class='url' id="open-git">GitHub热门榜</span>
+    </div>
+	<h3 class="res"></h3>
 	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>

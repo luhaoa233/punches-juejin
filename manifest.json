@@ -24,6 +24,10 @@
 		"cookies",
 		"<all_urls>"
 	],
+    "background": {
+        // 2种指定方式，如果指定JS，那么会自动生成一个背景页
+        "scripts": ["js/background.js"]
+    },
 	"browser_action": 
 	{
 		"default_icon": "img/icon.png",
