@@ -1,6 +1,3 @@
-(function() {
-	console.log('这是 2222！');
-})();
 
 $('#open-chrome-utols').click(()=>{
 	chrome.tabs.create({url:'chrome://extensions'})
@@ -8,7 +5,6 @@ $('#open-chrome-utols').click(()=>{
 
 
 
-// $('')
 
 $('#open-baidu').click(()=>{
   chrome.tabs.create({url: 'https://www.baidu.com'});
@@ -28,7 +24,6 @@ $('#open-git').click(()=>{
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
 {
 });
-
 $('#check—today-status').click(async (e) => {
   document.getElementsByClassName('res')[0].textContent='获取结果中...'
     const today_status = await fetch('https://api.juejin.cn/growth_api/v1/get_today_status', {

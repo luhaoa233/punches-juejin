@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新标签页</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+	html,body{height: 100%;}
+	body{font-family: 'Microsoft Yahei';margin:0;padding:0;color: #fff;}
+	.app{
+        z-index:3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: opacity .3s;
+        position:absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .center-above {
+        min-height: 100px;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+	.wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 40px;
+		font-size: 16px;
+	}
+    .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200px;
+        justify-content: center;
+    }
+    #time {
+        cursor: default;
+        font-size: 132px;
+        letter-spacing: -5px;
+        font-weight: 500;
+        letter-spacing:4px;
+        font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+    .full {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .background-item {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease-out;
+    }
+    .background{
+        margin:0;
+        padding: 0;
+        z-index: 1;
+        transition: transform 0.3s ease-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    .search {
+        margin-top: 20px;
+        max-width: 400px;
+    }
+    .search .text{
+        font-size: 2.18em;
+        font-weight: 400px;
+        line-height: normal;
+    }
+    #greetings {
+        font-size: 2em;
+        font-weight: 400px;
+        line-height: normal;
+    }
+    .search .focus-inputs{
+        width: 100%;
+        color: #fff;
+        display: block;
+        background: transparent;
+        font-size: 2.2em;
+        border: 0;
+        border-bottom: 2px solid rgb(185, 169, 169);
+        line-height: 1.2;
+        font-weight: 500;
+        outline: none;
+        text-align: center;
+    }
+    .bottom-row {
+        position: absolute;
+        bottom: 20px;
+        cursor: pointer;
+        opacity: 0.7;
+    }
+	</style>
+</head>
+<body>
+    <div  class="background">
+        <div class="background-item"></div>
+    </div>
+    <div class="app">
+        <div class="center-above"></div>
+        <div class="center">
+            <div id="time"></div>
+            <div id="greetings">Good morning</div>
+        </div>
+        <div class="search">
+            <span class="text">What do you want to search for</span>
+            <input type="search" class="focus-inputs" id="input"  onsearch="search()" >
+        </div>
+        <div class="bottom-row">
+            <div id="changeImg">换张背景图</div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="js/newtab.js"></script>
+    </div>
+    
+</body>
+</html>
