@@ -5,6 +5,15 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style>
+    @keyframes bgbody {
+        0% {
+            opacity: 0;
+            background-color: #333;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 	html,body{height: 100%;}
 	body{font-family: 'Microsoft Yahei';margin:0;padding:0;color: #fff;}
 	.app{
@@ -85,6 +94,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         z-index: -1;
+        animation: bgbody 1.5s ease;
     }
     .search {
         margin-top: 20px;
@@ -118,6 +128,9 @@
         bottom: 20px;
         cursor: pointer;
         opacity: 0.7;
+    }
+    .background-item{
+        animation: bgbody 1.5s ease;
     }
 	</style>
 </head>

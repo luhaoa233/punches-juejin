@@ -4,10 +4,9 @@ window.onload = function(){
 
     var num=Math.floor(Math.random()*10+1);
     var now = new Date().getDay();
-    var url = localStorage.getItem(`backGround${now}`) || `url("http://lxh.plus/background/${num}.jpg")`;
+    var url = localStorage.getItem(`backGround${now}`) || `url(img/${num}.jpg)`;
     localStorage.setItem(`backGround${now}`, url);
     document.getElementsByClassName('background-item')[0].style.backgroundImage=url;
-    
     setInterval(()=>{
         timeElement.textContent= getNowFormatDate()
     },1000);
