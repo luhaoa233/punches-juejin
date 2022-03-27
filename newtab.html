@@ -16,7 +16,7 @@
     }
 	html,body{height: 100%;}
 	body{font-family: 'Microsoft Yahei';margin:0;padding:0;color: #fff;}
-	.app{
+	#app{
         z-index:3;
         display: flex;
         flex-direction: column;
@@ -123,14 +123,116 @@
         outline: none;
         text-align: center;
     }
+
     .bottom-row {
         position: absolute;
         bottom: 20px;
         cursor: pointer;
         opacity: 0.7;
+        display: flex;
+    }
+    .bottom-row div{
+        padding:0 10px 0 10px;
     }
     .background-item{
+        transition: 1s;
         animation: bgbody 1.5s ease;
+    }
+    #commonly-use-url{
+        max-width: 80vw;
+        width: 600px;
+        height: 240px;
+        background-color: rgba(148, 148, 148, 0.575);
+        border-radius: 6px;
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;     
+    }
+    #commonly-use-url a{
+        text-decoration: none;
+    }
+    .url-icon{
+        width: 120px;
+        height: 120px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.2s;
+        position: relative;
+        letter-spacing:1px
+    }
+    .url-icon:hover{
+        background-color: rgba(232, 232, 233, 0.24);;
+    }
+    .icon {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(241,243,244);
+        align-items: center;
+    }
+    .icon img{
+        height: 24px;
+        width: 24px;
+    }
+    .url-title {
+        width: 90px;
+        overflow: hidden;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
+    .del-icon{
+        align-items: center;
+        border-radius: 4px;
+        display: flex;
+        height: 28px;
+        justify-content: center;
+        padding-inline-start: var(--cr-icon-button-icon-start-offset);
+        position: absolute;
+        width: 28px;
+        right: 4px;
+        top: 4px;
+        opacity: 0;
+        transition: .3s;
+    }
+    .del-icon:hover{
+        opacity: 1;
+    }
+    .maskedImage{
+        height: 24px;
+        width: 24px;
+    }
+    .bottom-row-add{
+        position: absolute;
+        bottom: 50px;
+        cursor: pointer;
+        opacity: 0;
+        display: flex;
+        transition: .2s;
+    }
+    .add-url-title{
+        width: 80px;
+    }
+    .add-url{
+        width: 160px;
+    }
+    .input {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid rgb(185, 169, 169);
+        line-height: 1.2;
+        font-weight: 500;
+        outline: none;
+        text-align: center;
+        color: #fff;
+        margin:0 10px 0 10px;
     }
 	</style>
 </head>
@@ -138,7 +240,7 @@
     <div  class="background">
         <div class="background-item"></div>
     </div>
-    <div class="app">
+    <div id="app">
         <div class="center-above"></div>
         <div class="center">
             <div id="time"></div>
@@ -148,10 +250,21 @@
             <span class="text">What do you want to search for</span>
             <input type="search" class="focus-inputs" id="input"  onsearch="search()" >
         </div>
+        <div id="commonly-use-url">
+        </div>
         <div class="bottom-row">
             <div id="changeImg">换张背景图</div>
+            <div id="showAdd">加个常用链接</div>
         </div>
-        <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+        <div class="bottom-row-add">
+            标题:
+            <input type="text" class="add-url-title input" id="title" autocomplete="off">
+            URL链接:
+            <input type="text" class="add-url input" id="url" placeholder="完整路径（带https://）" autocomplete="off">
+            <div id="addUrl">确定&nbsp;&nbsp;</div>
+            <div id="close">关闭</div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.8.3.js"></script>        
         <script type="text/javascript" src="js/newtab.js"></script>
     </div>
     
